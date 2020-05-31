@@ -17,14 +17,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "export CI=true && yarn build && lint-staged && yarn test",
-      "pre-push": "export CI=true && yarn build && lint-staged && yarn test"
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --write",
-      "tslint -c tslint.json"
+      "yarn lint"
     ]
   },
   "scripts": {
